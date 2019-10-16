@@ -16,4 +16,5 @@ RUN apt-get update -y && \
 WORKDIR /usr/local/src
 COPY build.sh /usr/local/bin/
 RUN ln -s /usr/local/bin/build.sh / # backwards compat
-ENTRYPOINT ["build.sh"]
+ENTRYPOINT ["/bin/sh"]
+CMD ["/usr/local/bin/build.sh"]
