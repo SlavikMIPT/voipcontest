@@ -14,4 +14,6 @@ RUN apt-get update -y && \
     libasound-dev && \
     apt-get clean
 WORKDIR /usr/src
-ENTRYPOINT ["/bin/sh"]
+ADD ./build.sh .
+
+ENTRYPOINT ["/bin/sh","build.sh"]
