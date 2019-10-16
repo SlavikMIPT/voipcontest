@@ -13,5 +13,5 @@ RUN apt-get update -y && \
     libpulse-dev \
     libasound-dev && \
     apt-get clean
-WORKDIR /usr/local/src
+WORKDIR /root
 ENTRYPOINT [ "/bin/bash" ]
