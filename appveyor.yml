@@ -5,7 +5,4 @@ services:
 - docker
 install:
 - docker build --rm -f "Dockerfile" -t tgvoip_env:debian .
-- git clone --recursive https://github.com/telegramdesktop/libtgvoip.git
-- cd libtgvoip
-- git checkout d4a0f719ffd8d29e88474f67abc9fc862661c3b9
-- docker run --privileged=true --rm -i -v ${PWD}:/root:z tgvoip_env:debian autoconf && rm -f aclocal.m4 && aclocal && libtoolize --force && automake --add-missing && autoreconf && ./configure && make
+- docker run --privileged=true --rm -d -v ${PWD}:/root:z tgvoip_env:debian

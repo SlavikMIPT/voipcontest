@@ -13,4 +13,17 @@ RUN apt-get update -y && \
     libpulse-dev \
     libasound-dev && \
     apt-get clean
-WORKDIR /root
+WORKDIR /root/src
+RUN git clone --recursive https://github.com/telegramdesktop/libtgvoip.git && \
+    cd libtgvoip && \
+    git checkout d4a0f719ffd8d29e88474f67abc9fc862661c3b9
+WORKDIR /root/src/libtgvoip
+RUN autoconf && \
+    rm -f aclocal.m4 && \
+    aclocal && \
+    libtoolize --force && \
+    automake --add-missing && \
+    autoreconf && \
+    ./configure && \
+    make
+ENTRYPOINT ["/bin/bash"]
