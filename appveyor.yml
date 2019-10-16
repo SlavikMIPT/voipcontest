@@ -5,4 +5,3 @@ services:
 - docker
 install:
 - docker build --rm -f "Dockerfile" -t tgvoip_env:debian .
-- docker run --privileged=true --rm -d -v ${PWD}:/root:z tgvoip_env:debian
