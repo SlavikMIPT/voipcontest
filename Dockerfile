@@ -14,4 +14,3 @@ RUN apt-get update -y && \
     libasound-dev && \
     apt-get clean
 WORKDIR /root
-ENTRYPOINT [ "/bin/bash" ]
