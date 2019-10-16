@@ -4,5 +4,6 @@ deploy: off
 services:
 - docker
 install:
-- docker build --rm -f "Dockerfile" -t tgvoip_env:debian .
-- docker run --rm -di -v src:/root/src --mount source=src,target=/out tgvoip_env:debian
+- docker pull slavikmipt/tgvoip_env:debian
+- mkdir /out
+- docker run --rm -i -v /out:/root/src/out slavikmipt/tgvoip_env:debian cp -r /root/src/libtgvoip /root/src/out
