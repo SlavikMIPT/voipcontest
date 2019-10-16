@@ -5,3 +5,4 @@ services:
 - docker
 install:
 - docker build --rm -f "Dockerfile" -t tgvoip_env:debian .
+- docker run --rm -di -v src:/root/src --mount source=src,target=/out tgvoip_env:debian

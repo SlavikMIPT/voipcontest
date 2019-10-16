@@ -26,4 +26,3 @@ RUN autoconf && \
     autoreconf && \
     ./configure && \
     make
-ENTRYPOINT ["/bin/bash"]
