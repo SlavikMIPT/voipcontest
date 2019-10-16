@@ -13,7 +13,7 @@ RUN apt-get update -y && \
     libpulse-dev \
     libasound-dev && \
     apt-get clean
-WORKDIR /usr/src
-ADD ./build.sh /usr/src/build.sh
-
-ENTRYPOINT ["/bin/sh","/usr/src/build.sh"]
+WORKDIR /usr/local/src
+COPY build.sh /usr/local/bin/
+RUN ln -s /usr/local/bin/build.sh / # backwards compat
+ENTRYPOINT ["build.sh"]
