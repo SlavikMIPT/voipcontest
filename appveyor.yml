@@ -10,5 +10,5 @@ install:
 - cp -r /mnt/out ./out && ls
 - cd out/libtgvoip && ls
 artifacts:
-  - path: out/libtgvoip
+  - path: out/libtgvoip/.libs
     name: libtgvoip
