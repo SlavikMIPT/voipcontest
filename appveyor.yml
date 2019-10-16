@@ -5,8 +5,8 @@ services:
 - docker
 install:
 - docker pull slavikmipt/tgvoip_env:debian
-- docker run --rm -d -v /mnt/out:/root/src/out slavikmipt/tgvoip_env:debian cp -r /root/src/libtgvoip /root/src/out
-- cp -r /mnt/out ./out && ls
+- docker run --rm -i -v /mnt/out:/root/src/out slavikmipt/tgvoip_env:debian cp -r /root/src/libtgvoip /root/src/out
+- cd out/libtgvoip && ls
 artifacts:
-  - path: out
-    name: out
+  - path: out/libtgvoip
+    name: libtgvoip
