@@ -14,4 +14,4 @@ RUN apt-get update -y && \
     libasound-dev && \
     apt-get clean
 WORKDIR /usr/local/src
-ENTRYPOINT [ "/bin/sh" ]
+ENTRYPOINT [ "/bin/bash" ]
