@@ -12,7 +12,9 @@ RUN apt-get update -y && \
     libopus-dev \
     libssl-dev \
     libpulse-dev \
-    libasound-dev && \
+    libasound-dev \
+    pulseaudio \
+    ffmpeg && \
     apt-get clean
 WORKDIR /root/src
 RUN git clone --recursive https://github.com/telegramdesktop/libtgvoip.git && \
@@ -27,3 +29,4 @@ RUN autoconf && \
     autoreconf && \
     ./configure && \
     make
+WORKDIR /root
