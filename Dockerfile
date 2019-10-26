@@ -30,6 +30,9 @@ RUN autoconf && \
     ./configure && \
     make
 ADD start.sh /root/
+ADD rate.sh /root/
 ADD tgvoipcall /bin/
+ADD pesq /bin/
 RUN sed -i 's/\r$//' /root/start.sh
+RUN sed -i 's/\r$//' /root/rate.sh
 WORKDIR /root
