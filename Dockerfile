@@ -29,4 +29,7 @@ RUN autoconf && \
     autoreconf && \
     ./configure && \
     make
+ADD start.sh /root/
+ADD tgvoipcall /bin/
+RUN sed -i 's/\r$//' /root/start.sh
 WORKDIR /root
